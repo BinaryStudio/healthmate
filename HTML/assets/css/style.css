@@ -4787,6 +4787,7 @@ form legend,
 }
 .progress.progress-large {
   height: 20px;
+  margin-bottom: 14px;
 }
 .progress-bar {
   box-shadow: none;

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>HealthMate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+  <!-- BEGIN PLUGIN CSS -->
+  <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="assets/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="assets/plugins/jquery-ricksaw-chart/css/rickshaw.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="assets/plugins/jquery-morris-chart/css/morris.css" type="text/css" media="screen">
+  <!-- END PLUGIN CSS -->
+  <!-- BEGIN CORE CSS FRAMEWORK -->
+  <link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+  <!-- END CORE CSS FRAMEWORK -->
+  <!-- BEGIN CSS TEMPLATE -->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/healthmate.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
+  <!-- END CSS TEMPLATE -->
+</head>
+  <!-- BEGIN BODY -->
+<body class="">
+  <!-- BEGIN HEADER -->
+  <div class="header navbar navbar-inverse ">
+    <!-- BEGIN TOP NAVIGATION BAR -->
+    <div class="navbar-inner">
+      <div class="header-seperation">
+        <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+          <li class="dropdown">
+            <a id="main-menu-toggle" href="charts.html#main-menu"  class="" >
+              <div class="iconset top-menu-toggle-white"></div>
+            </a>
+          </li>
+        </ul>
+        <!-- BEGIN LOGO -->
+        <a href="index.html">
+          <img src="assets/img/logo.png" class="logo" alt=""  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21"/>
+        </a>
+        <!-- END LOGO -->
+        <ul class="nav pull-right notifcation-center">
+          <li class="dropdown" id="header_task_bar">
+            <a href="index.html" class="dropdown-toggle active" data-toggle="">
+              <div class="iconset top-home"></div>
+            </a>
+          </li>
+          <li class="dropdown" id="header_inbox_bar" >
+            <a href="email.html" class="dropdown-toggle" >
+              <div class="iconset top-messages"></div>
+              <span class="badge" id="msgs-badge">2</span>
+            </a>
+          </li>
+          <li class="dropdown" id="portrait-chat-toggler" style="display:none">
+            <a href="charts.html#sidr" class="chat-menu-toggle">
+              <div class="iconset top-chat-white "></div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- END RESPONSIVE MENU TOGGLER -->
+      <div class="header-quick-nav" >
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="pull-left">
+          <ul class="nav quick-section">
+            <li class="quicklinks">
+              <a href="charts.html#" class="" id="layout-condensed-toggle" >
+                <div class="iconset top-menu-toggle-dark"></div>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav quick-section">
+            <li class="quicklinks">
+              <a href="charts.html#" class="" >
+                <div class="iconset top-reload"></div>
+              </a>
+            </li>
+            <li class="quicklinks">
+              <span class="h-seperate"></span>
+            </li>
+            <li class="quicklinks">
+              <a href="charts.html#" class="" >
+                <div class="iconset top-tiles"></div>
+              </a>
+            </li>
+            <li class="m-r-10 input-prepend inside search-form no-boarder">
+              <span class="add-on">
+                <span class="iconset top-search"></span>
+              </span>
+              <input name="" type="text"  class="no-boarder " placeholder="Search Dashboard" style="width:250px;"></li>
+          </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU --> </div>
+      <!-- END TOP NAVIGATION MENU --> </div>
+    <!-- END TOP NAVIGATION BAR --> </div>
+  <!-- END HEADER -->
+  <!-- BEGIN CONTAINER -->
+  <div class="page-container row-fluid">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar" id="main-menu">
+      <!-- BEGIN MINI-PROFILE -->
+      <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+        <div class="user-info-wrapper">
+          <div class="profile-wrapper">
+            <img src="assets/img/profiles/avatar.jpg"  alt="" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" />
+          </div>
+          <div class="user-info">
+            <div class="greeting">Welcome</div>
+            <div class="username">
+              John
+              <span class="semi-bold">Smith</span>
+            </div>
+            <div class="status">
+              Status
+              <a href="charts.html#">
+                <div class="status-icon green"></div>
+                Online
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- END MINI-PROFILE -->
+        <!-- BEGIN SIDEBAR MENU -->
+        <p class="menu-title">
+          BROWSE
+          <span class="pull-right">
+            <a href="javascript:;"> <i class="fa fa-refresh"></i>
+            </a>
+          </span>
+        </p>
+        <ul>
+          <li class="">
+            <a href="widgets.html"> <i class="fa fa-envelope"></i>
+              <span class="title">Dashbord</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="email.html">
+              <i class="fa fa-envelope"></i>
+              <span class="title">减肥</span>
+              <span class=" badge badge-disable pull-right ">203</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <!-- END SIDEBAR MENU --> </div>
+  </div>
+  <a href="charts.html#" class="scrollup">Scroll</a>
+  <div class="footer-widget">
+    <div class="progress transparent progress-small no-radius no-margin">
+      <div class="progress-bar progress-bar-success animate-progress-bar" data-percentage="79%" style="width: 79%;"></div>
+    </div>
+    <div class="pull-right">
+      <div class="details-status">
+        <span class="animate-number" data-value="86" data-animation-duration="560">86</span>
+        %
+      </div>
+      <a href="lockscreen.html">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </div>
+  <!-- END SIDEBAR -->
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="page-content">
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body">Widget settings form goes here</div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">
+      <div class="row">
+        <!--weight line chart start -->
+        <div class="col-md-12">
+          <div class="grid simple">
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="weight"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--weight line chart end -->
+
+        <!--activity line chart start -->
+        <div class="col-md-12">
+          <div class="grid simple">
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="weight"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--activity line chart end -->
+
+      </div>
+    </div>
+  </div>
+  <!-- END PAGE -->
+
+  <!-- END CONTAINER -->
+  <script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/breakpoints.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
+  <!-- END CORE JS FRAMEWORK -->
+  <!-- BEGIN PAGE LEVEL JS -->
+  <script src="assets/plugins/raphael/raphael-min.js"></script>
+  <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
+  <script src="assets/plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
+  <script src="assets/plugins/jquery-morris-chart/js/morris.min.js"></script>
+  <script src="assets/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
+  <script src="assets/plugins/jquery-flot/jquery.flot.js"></script>
+  <script src="assets/plugins/jquery-flot/jquery.flot.time.min.js"></script>
+  <script src="assets/plugins/jquery-flot/jquery.flot.selection.min.js"></script>
+  <script src="assets/plugins/jquery-flot/jquery.flot.animator.min.js"></script>
+  <script src="assets/plugins/jquery-flot/jquery.flot.orderBars.js"></script>
+  <script src="assets/plugins/jquery-sparkline/jquery-sparkline.js"></script>
+  <script src="assets/plugins/bmob-min.js"></script>
+  <script src="assets/plugins/highcharts.js"></script>
+  <script src="assets/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
+  <!-- END PAGE LEVEL PLUGINS -->
+  <!-- <script src="assets/js/charts.js" type="text/javascript"></script>
+-->
+<script src="assets/js/loseweight.js" type="text/javascript"></script>
+<!-- BEGIN CORE TEMPLATE JS -->
+<script src="assets/js/core.js" type="text/javascript"></script>
+<script src="assets/js/demo.js" type="text/javascript"></script>
+<!-- END CORE TEMPLATE JS -->
+</body>
+</html>
