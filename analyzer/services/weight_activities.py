@@ -18,19 +18,19 @@ class WeightActivities(object):
         #return self.cache.get(api_prefix + usercred)
         return [{"id":"539e4cf612ee310f677c2079",
                  "userId":"52e20cb2fff56aac62000001",
-                 "timestamp":"2014-06-15T23:59:59.000Z",
+                 "timestamp":"2014-05-01T23:59:59.000Z",
                  "value":80.7,"unit":"kg","source":"fitbit",
                  "createdAt":"2014-06-16T01:48:38.673Z",
                  "updatedAt":"2014-06-16T01:48:38.673Z"},
                 {"id":"539e4cf612ee310f677c2079",
                  "userId":"52e20cb2fff56aac62000001",
-                 "timestamp":"2014-06-27T15:40:53.000Z",
+                 "timestamp":"2014-05-05T15:40:53.000Z",
                  "value":80.8,"unit":"kg","source":"fitbit",
                  "createdAt":"2014-06-16T01:48:38.673Z",
-                 "updatedAt":"2014-06-16T01:48:38.673Z"},
+                 "updatedAt":"2014-05-29T01:48:38.673Z"},
                 {"id":"539e4cf612ee310f677c2079",
                  "userId":"52e20cb2fff56aac62000001",
-                 "timestamp":"2014-06-27T17:07:31.000Z",
+                 "timestamp":"2014-05-29T17:07:31.000Z",
                  "value":80.9,"unit":"kg","source":"fitbit",
                  "createdAt":"2014-06-16T01:48:38.673Z",
                  "updatedAt":"2014-06-16T01:48:38.673Z"}
@@ -128,6 +128,7 @@ class WeightActivities(object):
 
     def _gen_as_graph(self, activities):
         rs = []
+        activities = sorted(activities, key=lambda k: k['start_time'])
         for a in activities:
             rs.append({'time': a['start_time'],
                        'cal': a['calories']})
