@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request
 from tools.cache import QueryCache
 from services.weight_activities import WeightActivities
+from services.basic import BasicData
 
 app = Flask(__name__)
 
@@ -14,10 +15,16 @@ def jsonp(json_data):
     else:
         rs = json.dumps(json_data)
     return rs
-
+@app.route('/mock/weights')
+def get_mock_weights():
+    return jsonp(get_test_weights())
 @app.route('/')
 def NA():
     return 'NA'
+
+@app.route('/basic/<usercred>')
+def get_basic_data(usercred):
+    return jsonp(bd.get_cur_basic_data(usercred))
 
 @app.route('/loseweight/<usercred>/<start>/<end>')
 def get_activities(usercred, start, end):
@@ -30,6 +37,8 @@ def get_weight_activities(usercred):
 if __name__ == '__main__':
     api_prefix = 'https://api.humanapi.co/v1/'
     cache = QueryCache(api_prefix)
-    wa = WeightActivities(cache)
+    ad_cache = QueryCache('http://192.168.0.2:8080/')
+    wa = WeightActivities(cache, ad_cache)
+    bd = BasicData(cache)
     app.config['DEBUG'] = True
-    app.run('192.168.0.3')
+    app.run('192.168.0.2')
