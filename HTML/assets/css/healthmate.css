@@ -8,6 +8,11 @@
     margin-top:12px;
 }
 
+.bigfont {
+    font-size:23px;
+}
+
+
 .record-stats {
     position: absolute;
     left: 230px;
