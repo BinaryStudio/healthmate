@@ -24,13 +24,13 @@ class WeightActivities(object):
                  "updatedAt":"2014-06-16T01:48:38.673Z"},
                 {"id":"539e4cf612ee310f677c2079",
                  "userId":"52e20cb2fff56aac62000001",
-                 "timestamp":"2014-06-16T23:59:59.000Z",
+                 "timestamp":"2014-06-27T15:40:53.000Z",
                  "value":80.8,"unit":"kg","source":"fitbit",
                  "createdAt":"2014-06-16T01:48:38.673Z",
                  "updatedAt":"2014-06-16T01:48:38.673Z"},
                 {"id":"539e4cf612ee310f677c2079",
                  "userId":"52e20cb2fff56aac62000001",
-                 "timestamp":"2014-06-17T23:59:59.000Z",
+                 "timestamp":"2014-06-27T17:07:31.000Z",
                  "value":80.9,"unit":"kg","source":"fitbit",
                  "createdAt":"2014-06-16T01:48:38.673Z",
                  "updatedAt":"2014-06-16T01:48:38.673Z"}
@@ -45,7 +45,8 @@ class WeightActivities(object):
                (datetime_str, '%Y-%m-%dT%H:%M:%S.%fZ')
 
     def _get_timestamp(self, datetime_str):
-        return time.mktime(self._get_datetime(datetime_str).timetuple())
+        return int(time.mktime(self._get_datetime(datetime_str).timetuple())) \
+               * 1000
 
     def _get_period(self, datetime_str):
         h = self._get_datetime(datetime_str).\
@@ -58,7 +59,7 @@ class WeightActivities(object):
             return 'NI'
 
     def _gen_cal(self, weight, duration, type):
-        return weight * duration * k_value_dict(type)
+        return weight * duration * k_value_dict[type] / 60
 
     def _get_cal(self, activity):
         if activity.get('calories'):
@@ -68,9 +69,9 @@ class WeightActivities(object):
                         self._get_datetime(activity["startTime"])
             (dur_min, dur_secs) = divmod(durtation.days * 86400 + \
                                          durtation.seconds, 60)
-            _gen_cal(self, 65,
-                     dur_min / 60,
-                     activity['type'])
+            return self._gen_cal(65,
+                                 dur_min,
+                                 activity['type'])
 
     def _adjust_weight(self, weight):
         new_weight = {}
@@ -106,30 +107,42 @@ class WeightActivities(object):
             return None
 
     def _fit(self, activity, start, end):
-        rs = activity['start_time'] > start and \
-             activity['end_time'] < end
+        rs = int(activity['start_time']) >= int(start) and \
+             int(activity['end_time']) <= int(end)
         return rs
 
-    def _get_total_cal(self):
+    def _get_total_cal(self, activities):
         total = 0
-        for a in self.activities:
+        for a in activities:
             total += a['calories']
         return total
 
     def get_weights(self, usercred):
         rs = {}
         weights = [self._adjust_weight(w) for w in self._get_all_weights(usercred)]
-        print weights
         rs['raw'] = weights
         rs['graph'] = [[w['timestamp'], w['value']] for w in weights]
         if self._get_bmi(usercred):
             rs['bmi'] = self._get_bmi(usercred)
         return rs
 
-    def get_activities(self, start, end):
+    def _gen_as_graph(self, activities):
+        rs = []
+        for a in activities:
+            rs.append({'time': a['start_time'],
+                       'cal': a['calories']})
+            rs.append({'time': a['end_time'],
+                       'cal': a['calories']})
+            rs.append({'time': a['end_time'] + 1500,
+                       'cal': None})
+        return rs
+
+
+    def get_activities(self, usercred, start, end):
         rs = {}
         self.activities = [self._adjust_activity(a) for a in \
                           self._get_activities(usercred)]
-        rs['as'] = [a for a in self.activites if self._fit(a, start, end)]
-        rs['total_cal'] = self._get_total_cal()
+        rs['as'] = [a for a in self.activities if self._fit(a, start, end)]
+        rs['total_cal'] = self._get_total_cal(rs['as'])
+        rs['graph'] = self._gen_as_graph(rs['as'])
         return rs
