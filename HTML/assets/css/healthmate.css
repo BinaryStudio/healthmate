@@ -5,6 +5,7 @@
 .humanimg {
     display:block;
     margin:auto;
+    height:204px;
     margin-top:12px;
 }
 
@@ -12,10 +13,25 @@
     font-size:23px;
 }
 
+.barcenter {
+    margin-top: 32px;
+    margin-bottom: 24px !important;
+}
+
+#height {
+    font-size: 2em;
+}
+
+.nopadding {
+    padding:0px !important;
+}
+
+
 
 .record-stats {
     position: absolute;
-    left: 230px;
+    left: 220px;
     width: 150px;
-    top: 105px;
+    top: 60px;
+    line-height: 0.8;
 }

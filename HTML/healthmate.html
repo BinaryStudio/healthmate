@@ -274,22 +274,11 @@
     </div>
     <div class="clearfix"></div>
     <div class="content">
-      <ul class="breadcrumb">
-        <li>
-          <p>YOU ARE HERE</p>
-        </li>
-        <li><a href="charts.html#" class="active">Simple Grids</a></li>
-      </ul>
-      <div class="page-title"> <i class="icon-custom-left"></i>
-        <h3>Charts</h3>
-      </div>
-
-
 
        <div class="row">
         <div class="col-md-12">
           <div class="grid simple">
-            <div class="grid-body no-border">
+            <div class="nopadding grid-body no-border ">
               <div class="row">
                 <div class="col-md-8">
                   <div class="col-md-6 b-grey b-r b-b text-center">
@@ -299,6 +288,31 @@
                   <div class="col-md-6 b-grey b-r b-b text-center">
                     <h4 class="text-black semi-bold">体重</h4>
                     <span class="text-success semi-bold bigfont" id="weight" >0</span><span class="text-success semi-bold bigfont">kg</span>
+                  </div>
+                  <div class="col-md-4 b-grey b-r b-b text-center">
+                    <h4 class="text-black semi-bold">血压</h4>
+                    <span class="text-success semi-bold bigfont" id="weight" >102</span><span class="text-success semi-bold bigfont">/</span><span class="text-success semi-bold bigfont">78</span><span class="text-success semi-bold bigfont">mmHg</span>
+                  </div>
+                  <div class="col-md-4 b-grey b-b text-center">
+                    <h4 class="text-black semi-bold">收缩压</h4>
+                    <div class="progress progress-striped active progress-large">
+                      <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 b-grey b-r b-b text-center">
+                    <h4 class="text-black semi-bold">舒张压</h4>
+                    <div class="progress progress-striped active progress-large">
+                      <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-info"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 b-grey b-r b-b text-center">
+                    <h4 class="text-black semi-bold">运动时间</h4>
+                    <span class="text-success semi-bold bigfont" id="weight" >4</span><span class="text-success semi-bold bigfont">hours, </span><span class="text-success semi-bold bigfont">33</span><span class="text-success semi-bold bigfont">mins</span>
+                  </div>
+                  <div class="col-md-8 b-grey b-r b-b text-center">
+                    <div class="progress progress-striped active progress-large barcenter">
+                      <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-warning"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4 record">
@@ -314,384 +328,47 @@
         </div>
       </div>
 
-
-
-      <div class="row">
-        <div class="col-md-5">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Flot <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <h3>Flot <span class="semi-bold">Charts</span></h3>
-              <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
-              <br>
-              <div id="placeholder" class="demo-placeholder" style="width:100%;height:250px;"></div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="mini-chart-wrapper">
-                    <div class="chart-details-wrapper">
-                      <div class="chartname"> New Orders </div>
-                      <div class="chart-value"> 17,555 </div>
-                    </div>
-                    <div class="mini-chart">
-                      <div id="mini-chart-orders"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="mini-chart-wrapper">
-                    <div class="chart-details-wrapper">
-                      <div class="chartname"> My Balance </div>
-                      <div class="chart-value"> $17,555 </div>
-                    </div>
-                    <div class="mini-chart">
-                      <div id="mini-chart-other" ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Sparkline <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <div class="row-fluid">
-                <h3>Sparkline <span class="semi-bold">Charts</span></h3>
-                <p>The plugin is compatible with most modern browsers and has been tested with Firefox 2+, Safari 3+, Opera 9, Google Chrome and Internet Explorer 6, 7, 8, 9 & 10 as well as iOS and Android. </p>
-              </div>
-            </div>
-            <div class="tiles white no-margin"> <br>
-              <br>
-              <br>
-              <span id="mysparkline"></span> </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-7">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Sparkline <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <h3>More <span class="semi-bold">Options</span></h3>
-              <p>Sparkline line charts using <code>HTML</code> attributes. This method allows for all options </p>
-            </div>
-            <div class="tiles white no-margin"> <span id="spark-2"></span> </div>
-          </div>
-        </div>
-        <div class="col-md-5 ">
-          <div class="tiles white no-margin">
-            <div class="tiles-body">
-              <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-              <div class="tiles-title"> SERVER LOAD </div>
-              <div class="heading text-black "> 250 GB </div>
-              <div class="progress  progress-small no-radius progress-success">
-                <div class="bar animate-progress-bar" data-percentage="25%" ></div>
-              </div>
-              <div class="description"> <span class="mini-description"><span class="text-black">250GB</span> of <span class="text-black">1,024GB</span> used</span> </div>
-            </div>
-          </div>
-          <div class="tiles white no-margin">
-            <div id="updatingChart"> </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Morris <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4>Morris <span class="semi-bold">Line Charts</span></h4>
-                  <p> Line graphs are probably the most widely used graph for showing trends.
-                    Chart.js has a ton of customisation features for line graphs, along with support for multiple datasets to be plotted on one chart. </p>
-                  <div id="line-example"> </div>
-                </div>
-                <div class="col-md-6">
-                  <h4>Morris <span class="semi-bold">Area Charts</span></h4>
-                  <p> Line graphs are probably the most widely used graph for showing trends.
-                    Chart.js has a ton of customisation features for line graphs, along with support for multiple datasets to be plotted on one chart. </p>
-                  <div id="area-example"> </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="grid simple">
             <div class="grid-title no-border">
-              <h4>Bar <span class="semi-bold">Charts</span></h4>
+              <h4><span class="semi-bold">血压</span></h4>
               <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
             </div>
             <div class="grid-body no-border">
-              <h4>Ordered Bar <span class="semi-bold"> Charts</span></h4>
-              <p>Bar charts are powered by flot plugin, here is ordered stack bar chart with a legend in it. Everything in this chart is customizable</p>
-              <br>
-              <div id="placeholder-bar-chart" style="height:250px"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4>最近七天血压的平均值</h4>
+                  <div id="bloodpressure"> </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="col-md-6">
           <div class="grid simple">
             <div class="grid-title no-border">
-              <h4>Bar <span class="semi-bold">Charts</span></h4>
+              <h4><span class="semi-bold">体重</span></h4>
               <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
             </div>
             <div class="grid-body no-border">
-              <div class="row-fluid">
-                <h4>Stacked Bar <span class="semi-bold"> Charts</span></h4>
-                <p>Stacked bar chart is also powerd by the same plugin jquery flot. This is version where it is stacked on top of each other.</p>
-                <br>
-                <div id="stacked-ordered-chart" style="height:250px"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4>最近半个月体重变化</h4>
+                  <div id="bodyweight"> </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Morris <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <h4>Morris <span class="semi-bold">Donut Charts</span></h4>
-              <p>Similar to pie charts, doughnut charts are great for showing proportional data.Chart.js offers the same customisation options as for pie charts, but with a custom sized inner cutout to turn your pies into doughnuts. </p>
-              <div id="donut-example" style="height:200px;"> </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Pie <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <h4>Sparkline <span class="semi-bold">Pie Charts</span></h4>
-              <p>These charts are highly customizable, very easy to implement, scale to the resolution of the display of the client to provide sharp charts even on retina displays, and use requestAnimationFrame for smooth animations on modern devices.</p>
-              <br>
-              <div id="sparkline-pie" class="col-md-12"></div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="grid simple">
-            <div class="grid-title no-border">
-              <h4>Morris <span class="semi-bold">Charts</span></h4>
-              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-            </div>
-            <div class="grid-body no-border">
-              <h4>Easy <span class="semi-bold">Pie Charts</span></h4>
-              <p>These charts are highly customizable, very easy to implement, scale to the resolution of the display of the client to provide sharp charts even on retina displays, and use requestAnimationFrame for smooth animations on modern devices.</p>
-              <br>
-              <div class="pull-left">
-                <div id="ram-usage" class="easy-pie-custom" data-percent="85"><span class="easy-pie-percent">85</span></div>
-              </div>
-              <div class="pull-right">
-                <div id="disk-usage" class="easy-pie-custom" data-percent="73"><span class="easy-pie-percent">73</span></div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
     </div>
   </div>
 </div>
 <!-- END PAGE -->
-<!-- BEGIN CHAT -->
-<div id="sidr" class="chat-window-wrapper">
-  <div id="main-chat-wrapper" >
-    <div class="chat-window-wrapper fadeIn" id="chat-users" >
-      <div class="chat-header">
-        <div class="pull-left">
-          <input type="text" placeholder="search">
-        </div>
-        <div class="pull-right"> <a href="charts.html#" class="" >
-          <div class="iconset top-settings-dark "></div>
-          </a> </div>
-      </div>
-      <div class="side-widget">
-        <div class="side-widget-title">group chats</div>
-        <div class="side-widget-content">
-          <div id="groups-list">
-            <ul class="groups" >
-              <li><a href="charts.html#">
-                <div class="status-icon green"></div>
-                Office work</a></li>
-              <li><a href="charts.html#">
-                <div class="status-icon green"></div>
-                Personal vibes</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="side-widget fadeIn">
-        <div class="side-widget-title">favourites</div>
-        <div id="favourites-list">
-          <div class="side-widget-content" >
-            <div class="user-details-wrapper active" data-chat-status="online" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
-              <div class="user-profile"> <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-              <div class="user-details">
-                <div class="user-name"> Jane Smith </div>
-                <div class="user-more"> Hello you there? </div>
-              </div>
-              <div class="user-details-status-wrapper"> <span class="badge badge-important">3</span> </div>
-              <div class="user-details-count-wrapper">
-                <div class="status-icon green"></div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
-              <div class="user-profile"> <img src="assets/img/profiles/c.jpg"  alt="" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-              <div class="user-details">
-                <div class="user-name"> David Nester </div>
-                <div class="user-more"> Busy, Do not disturb </div>
-              </div>
-              <div class="user-details-status-wrapper">
-                <div class="clearfix"></div>
-              </div>
-              <div class="user-details-count-wrapper">
-                <div class="status-icon red"></div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="side-widget">
-        <div class="side-widget-title">more friends</div>
-        <div class="side-widget-content" id="friends-list">
-          <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
-            <div class="user-profile"> <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-            <div class="user-details">
-              <div class="user-name"> Jane Smith </div>
-              <div class="user-more"> Hello you there? </div>
-            </div>
-            <div class="user-details-status-wrapper"> </div>
-            <div class="user-details-count-wrapper">
-              <div class="status-icon green"></div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
-            <div class="user-profile"> <img src="assets/img/profiles/h.jpg"  alt="" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
-            <div class="user-details">
-              <div class="user-name"> David Nester </div>
-              <div class="user-more"> Busy, Do not disturb </div>
-            </div>
-            <div class="user-details-status-wrapper">
-              <div class="clearfix"></div>
-            </div>
-            <div class="user-details-count-wrapper">
-              <div class="status-icon red"></div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
-            <div class="user-profile"> <img src="assets/img/profiles/c.jpg"  alt="" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-            <div class="user-details">
-              <div class="user-name"> Jane Smith </div>
-              <div class="user-more"> Hello you there? </div>
-            </div>
-            <div class="user-details-status-wrapper"> </div>
-            <div class="user-details-count-wrapper">
-              <div class="status-icon green"></div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
-            <div class="user-profile"> <img src="assets/img/profiles/h.jpg"  alt="" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
-            <div class="user-details">
-              <div class="user-name"> David Nester </div>
-              <div class="user-more"> Busy, Do not disturb </div>
-            </div>
-            <div class="user-details-status-wrapper">
-              <div class="clearfix"></div>
-            </div>
-            <div class="user-details-count-wrapper">
-              <div class="status-icon red"></div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="chat-window-wrapper fadeIn" id="messages-wrapper" style="display:none">
-      <div class="chat-header">
-        <div class="pull-left">
-          <input type="text" placeholder="search">
-        </div>
-        <div class="pull-right"> <a href="charts.html#" class="" >
-          <div class="iconset top-settings-dark "></div>
-          </a> </div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="chat-messages-header">
-        <div class="status online"></div>
-        <span class="semi-bold">Jane Smith(Typing..)</span> <a href="charts.html#" class="chat-back"><i class="icon-custom-cross"></i></a> </div>
-      <div class="chat-messages">
-        <div class="sent_time">Yesterday 11:25pm</div>
-        <div class="user-details-wrapper " >
-          <div class="user-profile"> <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="bubble"> Hello, You there? </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="sent_time off">Yesterday 11:25pm</div>
-        </div>
-        <div class="user-details-wrapper ">
-          <div class="user-profile"> <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="bubble"> How was the meeting? </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="sent_time off">Yesterday 11:25pm</div>
-        </div>
-        <div class="user-details-wrapper ">
-          <div class="user-profile"> <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="bubble"> Let me know when you free </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="sent_time off">Yesterday 11:25pm</div>
-        </div>
-        <div class="sent_time ">Today 11:25pm</div>
-        <div class="user-details-wrapper pull-right">
-          <div class="user-details">
-            <div class="bubble sender"> Let me know when you free </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="sent_time off">Sent On Tue, 2:45pm</div>
-        </div>
-      </div>
-    </div>
-    <div class="chat-input-wrapper" style="display:none">
-      <textarea id="chat-message-input" rows="1" placeholder="Type your message"></textarea>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-<!-- END CHAT -->
+
 <!-- END CONTAINER -->
 <script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
@@ -701,7 +378,7 @@
 <script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
 <!-- END CORE JS FRAMEWORK -->
 <!-- BEGIN PAGE LEVEL JS -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="assets/plugins/raphael/raphael-min.js"></script>
 <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
@@ -718,11 +395,10 @@
 <script src="assets/plugins/jquery-sparkline/jquery-sparkline.js"></script>
 <script src="assets/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
-<script src="assets/js/charts.js" type="text/javascript"></script>
+<!-- <script src="assets/js/charts.js" type="text/javascript"></script> -->
 <script src="assets/js/healthmate.js" type="text/javascript"></script>
 <!-- BEGIN CORE TEMPLATE JS -->
 <script src="assets/js/core.js" type="text/javascript"></script>
-<script src="assets/js/chat.js" type="text/javascript"></script>
 <script src="assets/js/demo.js" type="text/javascript"></script>
 <!-- END CORE TEMPLATE JS -->
 </body>
