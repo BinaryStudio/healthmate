@@ -94,10 +94,15 @@ class WeightActivities(object):
              int(activity['end_time']) <= int(end)
         return rs
 
-    def _get_total_cal(self, activities):
-        total = 0
+    def _get_total(self, activities):
+        total = {}
+        total['cal'] = 0
+        total['steps'] = 0
+        total['distance'] = 0
         for a in activities:
-            total += a['calories']
+            total['cal'] += a['calories']
+            total['steps'] += a['steps']
+            total['distance'] += a['distance']
         return total
 
     def get_weights(self, usercred):
@@ -127,6 +132,6 @@ class WeightActivities(object):
         self.activities = [self._adjust_activity(a) for a in \
                           self._get_activities(usercred)]
         rs['as'] = [a for a in self.activities if self._fit(a, start, end)]
-        rs['total_cal'] = self._get_total_cal(rs['as'])
+        rs['total'] = self._get_total(rs['as'])
         rs['graph'] = self._gen_as_graph(rs['as'])
         return rs
