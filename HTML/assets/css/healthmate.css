@@ -1,0 +1,16 @@
+.record {
+    position:relative;
+}
+
+.humanimg {
+    display:block;
+    margin:auto;
+    margin-top:12px;
+}
+
+.record-stats {
+    position: absolute;
+    left: 230px;
+    width: 150px;
+    top: 105px;
+}
