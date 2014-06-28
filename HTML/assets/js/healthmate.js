@@ -1,7 +1,26 @@
 $(function() {
+    Bmob.initialize("9cef14ccfed7bf117429733f7c2e3a99", "55851e8509f6365bd8116750677cc708");
     $('#height').animateNumbers(172.0);
     $("#weight").animateNumbers(80);
     $("#age").animateNumbers(24);
+
+    // var user = new Bmob.User();
+    // user.set("username", "evernight");
+    // user.set("password", "199136");
+    // user.set("email", "everatnight@gmail.com");
+
+    // // other fields can be set just like with Bmob.Object
+    // user.set("phone", "415-392-0202");
+
+    // user.signUp(null, {
+    //     success: function(user) {
+    //         // Hooray! Let them use the app now.
+    //     },
+    //     error: function(user, error) {
+    //         // Show the error message somewhere and let the user try again.
+    //         alert("Error: " + error.code + " " + error.message);
+    //     }
+    // });
 
     Morris.Line({
         element: 'bloodpressure',
@@ -16,7 +35,7 @@ $(function() {
         }, {
             y: '2008',
             a: 50,
-            b: 40
+            b: null
         }, {
             y: '2009',
             a: 75,
@@ -36,6 +55,7 @@ $(function() {
         }],
         xkey: 'y',
         goals: [115, 75],
+        events: ['2010', '2011'],
         goalStrokeWidth: 3,
         goalLineColors: ['#d0002c', '#007fd0'],
         ykeys: ['a', 'b'],
