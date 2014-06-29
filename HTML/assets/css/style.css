@@ -1648,7 +1648,7 @@ blockquote.pull-right small:after {
   content: "";
 }
 .logo {
-  margin: 18px 14px;
+  margin: 3px 14px;
 }
 .normal {
   font-weight: normal;
@@ -5175,7 +5175,7 @@ form legend,
   width: auto;
 }
 .tiles .progress {
-  width: 70%;
+  width: 100%;
   margin-bottom: 15px;
 }
 .tiles .iconplaceholder {
@@ -7152,7 +7152,7 @@ input[type="checkbox"] {
 }
 .cbp_tmtimeline > li .cbp_tmtime {
   display: block;
-  width: 25%;
+  width: 28%;
   padding-right: 100px;
   position: absolute;
   font-family: 'Arial';

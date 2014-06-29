@@ -2,9 +2,13 @@
     position:relative;
 }
 
-.humanimg {
+
+.divcenter {
     display:block;
     margin:auto;
+}
+
+.humanimg {
     height:204px;
     margin-top:12px;
 }
@@ -26,6 +30,39 @@
     padding:0px !important;
 }
 
+.pietext {
+    color:#f35958;
+    font-size: 20px;
+}
+
+.pietextblue {
+    color:#7dc6ec;
+    font-size: 20px;
+}
+
+.pietextgreen {
+    color:#0aa699;
+    font-size: 20px;
+}
+
+.infotitle {
+    line-height: 0.5;
+    padding-bottom: 22px;
+}
+
+.smallfont {
+    font-size: 14px;
+    color: white;
+}
+
+.bmifont {
+    font-size: 38px;
+}
+
+.summarybottom {
+    margin-top:10px;
+    margin-bottom: 10px;
+}
 
 
 .record-stats {

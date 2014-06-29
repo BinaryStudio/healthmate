@@ -39,19 +39,8 @@
           </a> </li>
       </ul>
       <!-- BEGIN LOGO -->
-      <a href="index.html"><img src="assets/img/logo.png" class="logo" alt=""  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21"/></a>
+      <a href="index.html"><img src="assets/img/logo.png" class="logo" alt=""  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="212" height="42"/></a>
       <!-- END LOGO -->
-      <ul class="nav pull-right notifcation-center">
-        <li class="dropdown" id="header_task_bar"> <a href="index.html" class="dropdown-toggle active" data-toggle="">
-          <div class="iconset top-home"></div>
-          </a> </li>
-        <li class="dropdown" id="header_inbox_bar" > <a href="email.html" class="dropdown-toggle" >
-          <div class="iconset top-messages"></div>
-          <span class="badge" id="msgs-badge">2</span> </a></li>
-        <li class="dropdown" id="portrait-chat-toggler" style="display:none"> <a href="charts.html#sidr" class="chat-menu-toggle">
-          <div class="iconset top-chat-white "></div>
-          </a> </li>
-      </ul>
     </div>
     <!-- END RESPONSIVE MENU TOGGLER -->
     <div class="header-quick-nav" >
@@ -70,9 +59,6 @@
           <li class="quicklinks"> <a href="charts.html#" class="" >
             <div class="iconset top-tiles"></div>
             </a> </li>
-          <li class="m-r-10 input-prepend inside search-form no-boarder"> <span class="add-on"> <span class="iconset top-search"></span></span>
-            <input name="" type="text"  class="no-boarder " placeholder="Search Dashboard" style="width:250px;">
-          </li>
         </ul>
       </div>
       <!-- END TOP NAVIGATION MENU -->
@@ -89,21 +75,24 @@
     <!-- BEGIN MINI-PROFILE -->
     <div class="page-sidebar-wrapper" id="main-menu-wrapper">
       <div class="user-info-wrapper">
-        <div class="profile-wrapper"> <img src="assets/img/profiles/avatar.jpg"  alt="" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" /> </div>
+        <div class="profile-wrapper"> <img src="assets/img/profiles/avatar.jpg"  alt="" data-src="assets/img/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" /> </div>
         <div class="user-info">
           <div class="greeting">Welcome</div>
-          <div class="username">John <span class="semi-bold">Smith</span></div>
-          <div class="status">Status<a href="charts.html#">
-            <div class="status-icon green"></div>
-            Online</a></div>
+          <div class="username">Bai<span class="semi-bold">yijing</span></div>
+          <div class="status username">
+            <span class="text-success smallfont">BMI</span>
+            <span class="smallfont bmi">23</span>
+            <span class="text-success smallfont">体重</span>
+            <span class="smallfont weight">70</span>
+            </div>
         </div>
       </div>
       <!-- END MINI-PROFILE -->
       <!-- BEGIN SIDEBAR MENU -->
-      <p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+      <p class="menu-title">功能<span class="pull-right"></span></p>
       <ul>
-        <li class=""> <a href="widgets.html"> <i class="fa fa-envelope"></i> <span class="title">Dashbord</span></a> </li>
-        <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">减肥</span> <span class=" badge badge-disable pull-right ">203</span></a> </li>
+        <li class=""> <a href="healthmate.html"> <i class="fa fa-envelope"></i> <span class="title">Dashbord</span></a> </li>
+        <li class=""> <a href="loseweight.html"> <i class="fa fa-envelope"></i> <span class="title">减肥</span></a> </li>
         </ul>
       </div>
       <div class="clearfix"></div>
@@ -139,15 +128,15 @@
             <div class="nopadding grid-body no-border ">
               <div class="row">
                 <div class="col-md-8">
-                  <div class="col-md-6 b-grey b-r b-b text-center">
+                  <div class="col-md-6 b-grey b-r b-b text-center infotitle">
                     <h4 class="text-black">年龄</h4>
                     <span class="text-success bigfont" id="age">0</span><span class="text-success bigfont">岁</span>
                   </div>
-                  <div class="col-md-6 b-grey b-r b-b text-center">
+                  <div class="col-md-6 b-grey b-r b-b text-center infotitle">
                     <h4 class="text-black">体重</h4>
                     <span class="text-success bigfont" id="weight" >0</span><span class="text-success bigfont">kg</span>
                   </div>
-                  <div class="col-md-4 b-grey b-r b-b text-center">
+                  <div class="col-md-4 b-grey b-r b-b text-center infotitle">
                     <h4 class="text-black semi-bold">血压</h4>
                     <span class="text-success bigfont" id="weight" >102</span><span class="text-success bigfont">/</span><span class="text-success bigfont">78</span><span class="text-success bigfont">mmHg</span>
                   </div>
@@ -163,7 +152,7 @@
                       <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-info"></div>
                     </div>
                   </div>
-                  <div class="col-md-4 b-grey b-r b-b text-center">
+                  <div class="col-md-4 b-grey b-r b-b text-center infotitle">
                     <h4 class="text-black">运动时间</h4>
                     <span class="text-success bigfont" id="weight" >4</span><span class="text-success bigfont">hours, </span><span class="text-success bigfont">33</span><span class="text-success bigfont">mins</span>
                   </div>
@@ -174,7 +163,7 @@
                   </div>
                 </div>
                 <div class="col-md-4 record">
-                  <img class="humanimg" src="assets/img/body-blank.png" alt="Body">
+                  <img class="divcenter humanimg" src="assets/img/body-blank.png" alt="Body">
                   <div class="record-stats">
                     <h4 class="text-black semi-bold">身高:</h4>
                     <div><span class="semi-bold" id="height">0</span> <span class="semi-bold">cm</span></div>
@@ -221,8 +210,57 @@
           </div>
         </div>
       </div>
-     
-    </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">步数</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                   <div id="steps" class="easy-pie-custom divcenter pietext" data-percent="85"><span class="easy-pie-percent">8526</span>步</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">卡路里</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="cal" class="easy-pie-custom divcenter pietextblue" data-percent="85"><span class="easy-pie-percent">1500</span>大卡</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">活动时间</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="activetime" class="easy-pie-custom divcenter pietextgreen" data-percent="85"><span class="easy-pie-percent">120</span>分</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
   </div>
 </div>
 <!-- END PAGE -->

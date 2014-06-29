@@ -35,7 +35,7 @@ $(function() {
         }, {
             y: '2008',
             a: 50,
-            b: null
+            b: 40
         }, {
             y: '2009',
             a: 75,
@@ -55,12 +55,32 @@ $(function() {
         }],
         xkey: 'y',
         goals: [115, 75],
+        continuousLine: false,
         events: ['2010', '2011'],
         goalStrokeWidth: 3,
         goalLineColors: ['#d0002c', '#007fd0'],
         ykeys: ['a', 'b'],
         labels: ['收缩压', '舒张压'],
         lineColors: ['#0aa699', '#d1dade'],
+    });
+
+    $('#steps').easyPieChart({
+        lineWidth: 9,
+        barColor: '#f35958',
+        trackColor: '#e5e9ec',
+        scaleColor: false
+    });
+    $('#cal').easyPieChart({
+        lineWidth: 9,
+        barColor: '#7dc6ec',
+        trackColor: '#e5e9ec',
+        scaleColor: false
+    });
+    $('#activetime').easyPieChart({
+        lineWidth: 9,
+        barColor: '#0aa699',
+        trackColor: '#e5e9ec',
+        scaleColor: false
     });
 
     Morris.Line({
