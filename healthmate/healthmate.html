@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>HealthMate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<!-- BEGIN PLUGIN CSS -->
+<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
+<link rel="stylesheet" href="assets/plugins/jquery-ricksaw-chart/css/rickshaw.css" type="text/css" media="screen">
+<link rel="stylesheet" href="assets/plugins/jquery-morris-chart/css/morris.css" type="text/css" media="screen">
+<!-- END PLUGIN CSS -->
+<!-- BEGIN CORE CSS FRAMEWORK -->
+<link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<!-- END CORE CSS FRAMEWORK -->
+<!-- BEGIN CSS TEMPLATE -->
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/healthmate.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
+<!-- END CSS TEMPLATE -->
+</head>
+<!-- BEGIN BODY -->
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse ">
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+    <div class="header-seperation">
+      <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+        <li class="dropdown"> <a id="main-menu-toggle" href="healthmate.html#main-menu"  class="" >
+          <div class="iconset top-menu-toggle-white"></div>
+          </a> </li>
+      </ul>
+      <!-- BEGIN LOGO -->
+      <a href="index.html"><img src="assets/img/logo.png" class="logo" alt=""  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="212" height="42"/></a>
+      <!-- END LOGO -->
+    </div>
+    <!-- END RESPONSIVE MENU TOGGLER -->
+    <div class="header-quick-nav" >
+      <!-- BEGIN TOP NAVIGATION MENU -->
+      <div class="pull-left">
+        <ul class="nav quick-section">
+          <li class="quicklinks"> <a href="healthmate.html#" class="" id="layout-condensed-toggle" >
+            <div class="iconset top-menu-toggle-dark"></div>
+            </a> </li>
+        </ul>
+      </div>
+      <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END TOP NAVIGATION MENU -->
+  </div>
+  <!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+  <!-- BEGIN SIDEBAR -->
+  <div class="page-sidebar" id="main-menu">
+    <!-- BEGIN MINI-PROFILE -->
+    <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+      <div class="user-info-wrapper">
+        <div class="profile-wrapper"> <img src="assets/img/profiles/avatar.jpg"  alt="" data-src="assets/img/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" /> </div>
+        <div class="user-info">
+          <div class="greeting">Welcome</div>
+          <div class="username">Bai<span class="semi-bold">yijing</span></div>
+          <div class="status username">
+            <span class="text-success smallfont">BMI</span>
+            <span class="smallfont bmi">23</span>
+            <span class="text-success smallfont">体重</span>
+            <span class="smallfont weight">70</span>
+            </div>
+        </div>
+      </div>
+      <!-- END MINI-PROFILE -->
+      <!-- BEGIN SIDEBAR MENU -->
+      <p class="menu-title">功能<span class="pull-right"></span></p>
+      <ul>
+        <li class=""> <a href="healthmate.html"> <i class="fa fa-envelope"></i> <span class="title">Dashbord</span></a> </li>
+        <li class=""> <a href="loseweight.html"> <i class="fa fa-envelope"></i> <span class="title">减肥</span></a> </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <!-- END SIDEBAR MENU -->
+    </div>
+  </div>
+  <a href="charts.html#" class="scrollup">Scroll</a>
+  <div class="footer-widget">
+    <div class="progress transparent progress-small no-radius no-margin">
+      <div class="progress-bar progress-bar-success animate-progress-bar" data-percentage="79%" style="width: 79%;"></div>
+    </div>
+    <div class="pull-right">
+      <div class="details-status"> <span class="animate-number" data-value="86" data-animation-duration="560">86</span>% </div>
+      <a href="lockscreen.html"><i class="fa fa-power-off"></i></a></div>
+  </div>
+  <!-- END SIDEBAR -->
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="page-content">
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">
+
+       <div class="row">
+        <div class="col-md-12">
+          <div class="grid simple">
+            <div class="nopadding grid-body no-border ">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="col-md-6 b-grey b-r b-b text-center infotitle">
+                    <h4 class="text-black">年龄</h4>
+                    <span class="text-success bigfont" id="age">0</span><span class="text-success bigfont">岁</span>
+                  </div>
+                  <div class="col-md-6 b-grey b-r b-b text-center infotitle">
+                    <h4 class="text-black">体重</h4>
+                    <span class="text-success bigfont" id="weight" >0</span><span class="text-success bigfont">kg</span>
+                  </div>
+                  <div class="col-md-4 b-grey b-r b-b text-center infotitle">
+                    <h4 class="text-black semi-bold">血压</h4>
+                    <span class="text-success bigfont" id="bphigh" >102</span><span class="text-success bigfont">/</span><span class="text-success bigfont" id="bplow">78</span><span class="text-success bigfont">mmHg</span>
+                  </div>
+                  <div class="col-md-4 b-grey b-b text-center">
+                    <h4 class="text-black">收缩压</h4>
+                    <div class="progress progress-striped active progress-large">
+                      <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 b-grey b-r b-b text-center">
+                    <h4 class="text-black">舒张压</h4>
+                    <div class="progress progress-striped active progress-large">
+                      <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-info"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 b-grey b-r b-b text-center infotitle">
+                    <h4 class="text-black">运动时间</h4>
+                    <span class="text-success bigfont" id="weight" >4</span><span class="text-success bigfont">hours, </span><span class="text-success bigfont">33</span><span class="text-success bigfont">mins</span>
+                  </div>
+                  <div class="col-md-8 b-grey b-r b-b text-center">
+                    <div class="progress progress-striped active progress-large barcenter">
+                      <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-warning"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 record">
+                  <img class="divcenter humanimg" src="assets/img/body-blank.png" alt="Body">
+                  <div class="record-stats">
+                    <h4 class="text-black semi-bold">身高:</h4>
+                    <div><span class="semi-bold" id="height">0</span> <span class="semi-bold">cm</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">血压</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <h4>最近七天血压的平均值</h4>
+                  <div id="bloodpressure"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">体重</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <h4>最近半个月体重变化</h4>
+                  <div id="bodyweight"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">步数</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                   <div id="steps" class="easy-pie-custom divcenter pietext" data-percent="85"><span class="easy-pie-percent">8526</span>步</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">卡路里</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="cal" class="easy-pie-custom divcenter pietextblue" data-percent="85"><span class="easy-pie-percent">1500</span>大卡</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4><span class="semi-bold">活动时间</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="charts.html#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="activetime" class="easy-pie-custom divcenter pietextgreen" data-percent="85"><span class="easy-pie-percent">120</span>分</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+  </div>
+</div>
+<!-- END PAGE -->
+
+<!-- END CONTAINER -->
+<script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/breakpoints.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
+<!-- END CORE JS FRAMEWORK -->
+<!-- BEGIN PAGE LEVEL JS -->
+<script src="assets/plugins/raphael/raphael-min.js"></script>
+<script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
+<script src="assets/plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
+<script src="assets/plugins/jquery-morris-chart/js/morris.min.js"></script>
+<script src="assets/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
+<script src="assets/plugins/jquery-flot/jquery.flot.js"></script>
+<script src="assets/plugins/jquery-flot/jquery.flot.time.min.js"></script>
+<script src="assets/plugins/jquery-flot/jquery.flot.selection.min.js"></script>
+<script src="assets/plugins/jquery-flot/jquery.flot.animator.min.js"></script>
+<script src="assets/plugins/jquery-flot/jquery.flot.orderBars.js"></script>
+<script src="assets/plugins/jquery-sparkline/jquery-sparkline.js"></script>
+<script src="assets/plugins/bmob-min.js"></script>
+<script src="assets/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- <script src="assets/js/charts.js" type="text/javascript"></script> -->
+<script src="assets/js/healthmate.js" type="text/javascript"></script>
+<!-- BEGIN CORE TEMPLATE JS -->
+<script src="assets/js/core.js" type="text/javascript"></script>
+<script src="assets/js/demo.js" type="text/javascript"></script>
+<!-- END CORE TEMPLATE JS -->
+</body>
+</html>

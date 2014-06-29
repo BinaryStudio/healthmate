@@ -1,8 +1,6 @@
 $(function() {
     // Bmob.initialize("9cef14ccfed7bf117429733f7c2e3a99", "55851e8509f6365bd8116750677cc708");
-    $('#height').animateNumbers(172.0);
-    $("#weight").animateNumbers(80);
-    $("#age").animateNumbers(24);
+
 
     // var user = new Bmob.User();
     // user.set("username", "evernight");
@@ -41,6 +39,24 @@ $(function() {
                 labels: ['收缩压', '舒张压'],
                 lineColors: ['#0aa699', '#d1dade'],
             });
+        }
+    });
+
+    $.ajax({
+        dataType: "jsonp",
+        url: 'http://192.168.0.2:5000/basic/demo',
+        data: {},
+        success: function(json, textStatus) {
+            $('#height').animateNumbers(json.height / 10);
+            $("#weight").animateNumbers(json.weight);
+            $("#age").animateNumbers(24);
+
+
+            $('#bmi').html(json.bmi);
+            $('#bodyfat').html(json.bodyFat);
+
+            $('#bphigh').html(json.bphigh);
+            $('#bplow').html(json.bplow);
         }
     });
 
