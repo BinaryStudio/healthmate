@@ -14,7 +14,7 @@ class WeightActivities(object):
         self.ad_cache = ad_cache
 
     def _get_all_weights(self, usercred):
-        api_prefix = 'mock/weights'
+        api_prefix = 'data/getWeight?uid=' + usercred
         return self.ad_cache.get(api_prefix)
 
     def _get_activities(self, usercred):
@@ -57,7 +57,7 @@ class WeightActivities(object):
     def _adjust_weight(self, weight):
         new_weight = {}
         new_weight['timestamp'] = self._get_timestamp(weight['timestamp'])
-        new_weight['value'] = weight['value']
+        new_weight['value'] = int(weight['value'])
         new_weight['unit'] = weight['unit']
         return new_weight
 
@@ -74,18 +74,6 @@ class WeightActivities(object):
         new_activity['steps'] = activity['steps']
         new_activity['calories'] = self._get_cal(activity)
         return new_activity
-
-    def _get_bmi(self, usercred):
-        api = 'human?access_token=' + usercred
-        human = self.cache.get(api)
-        if human.get('bmi'):
-            return human['bmi']['value']
-        elif human.get('height'):
-            return human['weight']['value'] / \
-                   ((human['height']['value'] / 100) * \
-                    (human['height']['value'] / 100))
-        else:
-            return None
 
     def _fit(self, activity, start, end):
         rs = int(activity['start_time']) >= int(start) and \
@@ -106,10 +94,9 @@ class WeightActivities(object):
     def get_weights(self, usercred):
         rs = {}
         weights = [self._adjust_weight(w) for w in self._get_all_weights(usercred)]
+        weights = sorted(weights, key=lambda k: k['timestamp'])
         rs['raw'] = weights
         rs['graph'] = [[w['timestamp'], w['value']] for w in weights]
-        if self._get_bmi(usercred):
-            rs['bmi'] = self._get_bmi(usercred)
         return rs
 
     def _gen_as_graph(self, activities):
@@ -129,7 +116,11 @@ class WeightActivities(object):
         rs = {}
         self.activities = [self._adjust_activity(a) for a in \
                           self._get_activities(usercred)]
-        rs['as'] = [a for a in self.activities if self._fit(a, start, end)]
-        rs['total'] = self._get_total(rs['as'])
-        rs['graph'] = self._gen_as_graph(rs['as'])
+        activities = [a for a in self.activities if self._fit(a, start, end)]
+        rs['as'] = {}
+        rs['as']['AM'] = [a for a in activities if a['period'] == 'AM']
+        rs['as']['PM'] = [a for a in activities if a['period'] == 'PM' or \
+                                                   a['period'] == 'NI']
+        rs['total'] = self._get_total(activities)
+        rs['graph'] = self._gen_as_graph(activities)
         return rs

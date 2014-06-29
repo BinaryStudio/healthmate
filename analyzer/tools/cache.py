@@ -13,6 +13,7 @@ class QueryCache(object):
     def get(self, url):
         dict_key = self._get_dict_key(url)
         full_url = self.api_prefix + url
+        print full_url
         if self.cache.get(dict_key):
             return self.cache[dict_key]
         else:

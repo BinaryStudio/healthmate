@@ -35,7 +35,7 @@ def get_weight_activities(usercred):
 if __name__ == '__main__':
     api_prefix = 'https://api.humanapi.co/v1/'
     cache = QueryCache(api_prefix)
-    ad_cache = QueryCache('http://192.168.0.2:8080/')
+    ad_cache = QueryCache('http://128.199.173.177:8080/hm/index.php/')
     wa = WeightActivities(cache, ad_cache)
     bd = BasicData(cache)
     app.config['DEBUG'] = True
