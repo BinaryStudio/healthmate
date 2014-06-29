@@ -1,0 +1,74 @@
+.record {
+    position:relative;
+}
+
+
+.divcenter {
+    display:block;
+    margin:auto;
+}
+
+.humanimg {
+    height:204px;
+    margin-top:12px;
+}
+
+.bigfont {
+    font-size:23px;
+}
+
+.barcenter {
+    margin-top: 32px;
+    margin-bottom: 24px !important;
+}
+
+#height {
+    font-size: 2em;
+}
+
+.nopadding {
+    padding:0px !important;
+}
+
+.pietext {
+    color:#f35958;
+    font-size: 20px;
+}
+
+.pietextblue {
+    color:#7dc6ec;
+    font-size: 20px;
+}
+
+.pietextgreen {
+    color:#0aa699;
+    font-size: 20px;
+}
+
+.infotitle {
+    line-height: 0.5;
+    padding-bottom: 22px;
+}
+
+.smallfont {
+    font-size: 14px;
+    color: white;
+}
+
+.bmifont {
+    font-size: 38px;
+}
+
+.summarybottom {
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+
+.record-stats {
+    position: absolute;
+    left: 220px;
+    width: 150px;
+    top: 60px;
+    line-height: 0.8;
+}
