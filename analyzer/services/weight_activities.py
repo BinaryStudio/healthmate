@@ -5,7 +5,7 @@ from tools.cache import QueryCache
 k_value_dict = {
                    "walking": 30/6,
                    "running": 30/2,
-                   "unknown": 0
+                   "unknown": 30/3
                }
 
 class WeightActivities(object):
@@ -14,7 +14,8 @@ class WeightActivities(object):
         self.ad_cache = ad_cache
 
     def _get_all_weights(self, usercred):
-        api_prefix = 'data/getWeight?uid=' + usercred
+        #api_prefix = 'data/getWeight?uid=' + usercred
+        api_prefix = 'mock/weights'
         return self.ad_cache.get(api_prefix)
 
     def _get_activities(self, usercred):
@@ -40,16 +41,20 @@ class WeightActivities(object):
             return 'NI'
 
     def _gen_cal(self, weight, duration, type):
-        return weight * duration * k_value_dict[type] / 60
+        return int(weight * duration * k_value_dict[type] / float(60))
+
+    def _get_dur_min(self, activity):
+        durtation = self._get_datetime(activity["endTime"]) - \
+                    self._get_datetime(activity["startTime"])
+        (dur_min, dur_secs) = divmod(durtation.days * 86400 + \
+                                     durtation.seconds, 60)
+        return dur_min
 
     def _get_cal(self, activity):
         if activity.get('calories'):
             return activity.get('calories')
         else:
-            durtation = self._get_datetime(activity["endTime"]) - \
-                        self._get_datetime(activity["startTime"])
-            (dur_min, dur_secs) = divmod(durtation.days * 86400 + \
-                                         durtation.seconds, 60)
+            dur_min = self._get_dur_min(activity)
             return self._gen_cal(65,
                                  dur_min,
                                  activity['type'])
@@ -57,7 +62,7 @@ class WeightActivities(object):
     def _adjust_weight(self, weight):
         new_weight = {}
         new_weight['timestamp'] = self._get_timestamp(weight['timestamp'])
-        new_weight['value'] = int(weight['value'])
+        new_weight['value'] = weight['value']
         new_weight['unit'] = weight['unit']
         return new_weight
 
@@ -69,7 +74,7 @@ class WeightActivities(object):
                                    activity['endTime'])
         new_activity['period'] = self._get_period(activity['startTime'])
         new_activity['type'] = activity['type']
-        new_activity['duration'] = activity['duration']
+        new_activity['duration'] = self._get_dur_min(activity)
         new_activity['distance'] = activity['distance']
         new_activity['steps'] = activity['steps']
         new_activity['calories'] = self._get_cal(activity)
@@ -80,7 +85,7 @@ class WeightActivities(object):
              int(activity['end_time']) <= int(end)
         return rs
 
-    def _get_total(self, activities):
+    def _get_total(self, activities, am_cal_max, pm_cal_max):
         total = {}
         total['cal'] = 0
         total['steps'] = 0
@@ -89,6 +94,8 @@ class WeightActivities(object):
             total['cal'] += a['calories']
             total['steps'] += a['steps']
             total['distance'] += a['distance']
+            total['am_cal_max'] = am_cal_max
+            total['pm_cal_max'] = pm_cal_max
         return total
 
     def get_weights(self, usercred):
@@ -116,11 +123,14 @@ class WeightActivities(object):
         rs = {}
         self.activities = [self._adjust_activity(a) for a in \
                           self._get_activities(usercred)]
-        activities = [a for a in self.activities if self._fit(a, start, end)]
+        activities = [a for a in self.activities if self._fit(a, start, end)
+                                                    and a['calories']]
         rs['as'] = {}
         rs['as']['AM'] = [a for a in activities if a['period'] == 'AM']
         rs['as']['PM'] = [a for a in activities if a['period'] == 'PM' or \
                                                    a['period'] == 'NI']
-        rs['total'] = self._get_total(activities)
+        max_cal_am = max([a['calories'] for a in rs['as']['AM']])
+        max_cal_pm = max([a['calories'] for a in rs['as']['PM']])
+        rs['total'] = self._get_total(activities, max_cal_am, max_cal_pm)
         rs['graph'] = self._gen_as_graph(activities)
         return rs

@@ -32,11 +32,16 @@ def get_activities(usercred, start, end):
 def get_weight_activities(usercred):
     return jsonp(wa.get_weights(usercred))
 
+@app.route('/basic/bp/<usercred>')
+def get_bp_data(usercred):
+    return jsonp(bd.get_all_bp(usercred))
+
 if __name__ == '__main__':
     api_prefix = 'https://api.humanapi.co/v1/'
     cache = QueryCache(api_prefix)
-    ad_cache = QueryCache('http://128.199.173.177:8080/hm/index.php/')
+    #ad_cache = QueryCache('http://128.199.173.177:8080/hm/index.php/')
+    ad_cache = QueryCache('http://192.168.0.2:8080/')
     wa = WeightActivities(cache, ad_cache)
-    bd = BasicData(cache)
+    bd = BasicData(cache, ad_cache)
     app.config['DEBUG'] = True
     app.run('192.168.0.2')
