@@ -57,6 +57,7 @@ $(function() {
         data: {},
         success: function(json, textStatus) {
             console.log(json)
+
             $('#weightgraph').highcharts({
                 title: {
                     text: '近一月体重趋势',
@@ -91,8 +92,6 @@ $(function() {
                         point: {
                             events: {
                                 click: function() {
-                                    alert('Category: ' + this.category + ', value: ' + this.y);
-                                    console.log(this);
                                     for (var i = 0; i < this.series.xData.length; i++) {
                                         if (this.category == this.series.xData[i]) {
                                             if (i >= 1) {
@@ -107,7 +106,10 @@ $(function() {
                                                     data: {},
                                                     success: function(json, textStatus) {
 
-                                                        console.log(json.as.AM);
+                                                        console.log(json);
+                                                        $('#calories').html(json.total.cal);
+                                                        $('#steps').html(json.total.steps);
+                                                        $('#distance').html(json.total.distance);
                                                         var maxcalam = json.total.pm_cal_max;
                                                         var maxcalpm = json.total.am_cal_max;
 
