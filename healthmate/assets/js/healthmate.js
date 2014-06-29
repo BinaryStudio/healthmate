@@ -92,38 +92,29 @@ $(function() {
     });
 
 
-
-    Morris.Line({
-        element: 'bodyweight',
-        data: [{
-            y: '2006',
-            a: 50
-        }, {
-            y: '2007',
-            a: 65
-        }, {
-            y: '2008',
-            a: 50
-        }, {
-            y: '2009',
-            a: 75
-        }, {
-            y: '2010',
-            a: 60
-        }, {
-            y: '2011',
-            a: 75
-        }, {
-            y: '2012',
-            a: 76
-        }],
-        xkey: 'y',
-        goals: [75],
-        goalStrokeWidth: 3,
-        goalLineColors: ['#007fd0'],
-        ykeys: ['a'],
-        labels: ['体重'],
-        lineColors: ['#0aa699'],
+    $.ajax({
+        dataType: "jsonp",
+        url: 'http://192.168.0.2:5000/loseweight/demo/weight',
+        data: {},
+        success: function(json, textStatus) {
+            console.log('hello');
+            console.log(json);
+            Morris.Line({
+                element: 'bodyweight',
+                data: json.raw,
+                xkey: 'timestamp',
+                goals: [79],
+                goalStrokeWidth: 2,
+                goalLineColors: ['#d0002c'],
+                ykeys: ['value'],
+                labels: ['体重'],
+                lineColors: ['#0aa699'],
+            });
+        }
     });
+
+
+
+
 
 });
