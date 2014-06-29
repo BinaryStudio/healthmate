@@ -8,7 +8,6 @@ k_value_dict = {
                    "unknown": 0
                }
 
-
 class WeightActivities(object):
     def __init__(self, cache, ad_cache):
         self.cache = cache
@@ -17,7 +16,6 @@ class WeightActivities(object):
     def _get_all_weights(self, usercred):
         api_prefix = 'mock/weights'
         return self.ad_cache.get(api_prefix)
-
 
     def _get_activities(self, usercred):
         api_prefix = 'human/activities?access_token='

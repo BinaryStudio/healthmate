@@ -5,9 +5,11 @@ class QueryCache(object):
     def __init__(self, api_prefix):
         self.api_prefix = api_prefix
         self.cache = {}
+
     def _get_dict_key(self, url):
         rs, counts = re.subn('/|\?|=', '_', url)
         return rs
+
     def get(self, url):
         dict_key = self._get_dict_key(url)
         full_url = self.api_prefix + url

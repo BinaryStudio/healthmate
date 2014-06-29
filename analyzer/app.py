@@ -15,9 +15,7 @@ def jsonp(json_data):
     else:
         rs = json.dumps(json_data)
     return rs
-@app.route('/mock/weights')
-def get_mock_weights():
-    return jsonp(get_test_weights())
+
 @app.route('/')
 def NA():
     return 'NA'
