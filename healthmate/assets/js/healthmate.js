@@ -1,5 +1,5 @@
 $(function() {
-    Bmob.initialize("9cef14ccfed7bf117429733f7c2e3a99", "55851e8509f6365bd8116750677cc708");
+    // Bmob.initialize("9cef14ccfed7bf117429733f7c2e3a99", "55851e8509f6365bd8116750677cc708");
     $('#height').animateNumbers(172.0);
     $("#weight").animateNumbers(80);
     $("#age").animateNumbers(24);
@@ -22,66 +22,60 @@ $(function() {
     //     }
     // });
 
-    Morris.Line({
-        element: 'bloodpressure',
-        data: [{
-            y: '2006',
-            a: 50,
-            b: 40
-        }, {
-            y: '2007',
-            a: 65,
-            b: 55
-        }, {
-            y: '2008',
-            a: 50,
-            b: 40
-        }, {
-            y: '2009',
-            a: 75,
-            b: 65
-        }, {
-            y: '2010',
-            a: 50,
-            b: 40
-        }, {
-            y: '2011',
-            a: 75,
-            b: 65
-        }, {
-            y: '2012',
-            a: 100,
-            b: 90
-        }],
-        xkey: 'y',
-        goals: [115, 75],
-        continuousLine: false,
-        events: ['2010', '2011'],
-        goalStrokeWidth: 3,
-        goalLineColors: ['#d0002c', '#007fd0'],
-        ykeys: ['a', 'b'],
-        labels: ['收缩压', '舒张压'],
-        lineColors: ['#0aa699', '#d1dade'],
+
+    $.ajax({
+        dataType: "jsonp",
+        url: 'http://192.168.0.2:5000/basic/bp/demo',
+        data: {},
+        success: function(json, textStatus) {
+            console.log(json);
+            Morris.Line({
+                element: 'bloodpressure',
+                data: json,
+                xkey: 'timestamp',
+                goals: [115, 75],
+                continuousLine: false,
+                goalStrokeWidth: 3,
+                goalLineColors: ['#d0002c', '#007fd0'],
+                ykeys: ['high', 'low'],
+                labels: ['收缩压', '舒张压'],
+                lineColors: ['#0aa699', '#d1dade'],
+            });
+        }
     });
 
-    $('#steps').easyPieChart({
-        lineWidth: 9,
-        barColor: '#f35958',
-        trackColor: '#e5e9ec',
-        scaleColor: false
+    $.ajax({
+        dataType: "jsonp",
+        url: 'http://192.168.0.2:5000/loseweight/demo/1/99999999999999',
+        data: {},
+        success: function(json, textStatus) {
+            // console.log(json);
+            // $('#steps').html(json.total.steps);
+            // $('#distance').html(json.total.distance);
+            // $('#cal').html(json.total.cal);
+
+            $('#steps').easyPieChart({
+                lineWidth: 9,
+                barColor: '#f35958',
+                trackColor: '#e5e9ec',
+                scaleColor: false
+            });
+            $('#cal').easyPieChart({
+                lineWidth: 9,
+                barColor: '#7dc6ec',
+                trackColor: '#e5e9ec',
+                scaleColor: false
+            });
+            $('#activetime').easyPieChart({
+                lineWidth: 9,
+                barColor: '#0aa699',
+                trackColor: '#e5e9ec',
+                scaleColor: false
+            });
+        }
     });
-    $('#cal').easyPieChart({
-        lineWidth: 9,
-        barColor: '#7dc6ec',
-        trackColor: '#e5e9ec',
-        scaleColor: false
-    });
-    $('#activetime').easyPieChart({
-        lineWidth: 9,
-        barColor: '#0aa699',
-        trackColor: '#e5e9ec',
-        scaleColor: false
-    });
+
+
 
     Morris.Line({
         element: 'bodyweight',
